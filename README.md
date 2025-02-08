@@ -8,7 +8,7 @@
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #222; color: white; text-align: center; }
         header {
             background: linear-gradient(to bottom, red 33%, white 33%, white 66%, orange 66%);
-            color: white;
+            color: black;
             text-align: center;
             padding: 30px;
             font-size: 50px;
