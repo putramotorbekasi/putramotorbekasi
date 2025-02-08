@@ -6,9 +6,18 @@
     <title>Putra Motor Bekasi</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #222; color: white; text-align: center; }
-        header { background: #d32f2f; color: white; text-align: center; padding: 30px; font-size: 40px; font-weight: bold; font-family: 'Impact', sans-serif; }
+        header {
+            background: linear-gradient(to bottom, red 33%, white 33%, white 66%, orange 66%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Arial Black', sans-serif;
+            letter-spacing: 3px;
+        }
         .container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
-        label { display: block; margin-top: 15px; font-size: 18px; }
+        label { display: block; margin-top: 15px; font-size: 18px; text-align: left; }
         input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
         .service-box { display: flex; align-items: center; justify-content: center; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
         .service-box.selected { background: red; }
