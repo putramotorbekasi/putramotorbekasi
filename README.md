@@ -11,7 +11,7 @@
             color: black;
             text-align: center;
             padding: 30px;
-            font-size: 50px;
+            font-size: 40px;
             font-weight: bold;
             font-family: 'Arial Black', sans-serif;
             letter-spacing: 3px;
