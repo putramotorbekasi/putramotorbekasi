@@ -89,5 +89,12 @@
         </ul>
         <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
     </div>
+<div class="contact-section">
+        <h2>Contact Information</h2>
+        <p><img src="phone-icon.png" alt="Phone"> Phone: 0877-8916-8900</p>
+        <p><img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp: 0857-8143-4887</p>
+        <p><img src="instagram-icon.png" alt="Instagram"> Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
+        <p><img src="location-icon.png" alt="Location"> Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
+    </div>
 </body>
 </html>
