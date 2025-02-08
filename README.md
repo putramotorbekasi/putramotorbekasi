@@ -78,9 +78,9 @@
     </div>
 <div class="contact-section">
         <h2>Contact Information</h2>
-        <p>"phone-icon.png" alt="Phone"> Phone: 0877-8916-8900</p>
-        <p>"whatsapp-icon.png" alt="WhatsApp"> WhatsApp: 0857-8143-4887</p>
-        <p>"instagram-icon.png" alt="Instagram"> Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
+        <p>Phone: 087789168900</p>
+        <p>WhatsApp: 085781434887</p>
+        <p>Instagram"> Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
         <p><img src="location-icon.png" alt="Location"> Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
     </div>
 </body>
