@@ -5,128 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Putra Motor Bekasi</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: rgba(0, 0, 0, 0.9); 
-            color: white; 
-        }
-        header { 
-            background: #d32f2f; 
-            color: white; 
-            text-align: center; 
-            padding: 20px; 
-            font-size: 28px; 
-            font-weight: bold; 
-            font-family: 'Racing Sans One', sans-serif;
-        }
-        nav { display: flex; justify-content: center; background: #ff9800; padding: 15px; }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px; }
-        .banner { text-align: center; padding: 60px 20px; font-size: 30px; font-weight: bold; }
-        .container { max-width: 600px; margin: auto; padding: 20px; text-align: left; background: rgba(0, 0, 0, 0.7); border-radius: 10px; }
-        .booking-form { margin-top: 30px; }
-        .booking-form label { font-weight: bold; display: block; margin-top: 12px; font-size: 18px; }
-        .booking-form input, .booking-form select { width: 100%; padding: 10px; margin-top: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-        .checkbox-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .checkbox-container label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 16px;
-            width: 50%;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 5px;
-            background: white;
-            color: black;
-            transition: background 0.3s, color 0.3s;
-        }
-        .checkbox-container label input {
-            display: none;
-        }
-        .checkbox-container label.active {
-            background: red;
-            color: white;
-        }
-        button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; margin-top: 20px; }
-        button:hover { background: #e65100; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #222; color: white; text-align: center; }
+        header { background: #d32f2f; color: white; text-align: center; padding: 30px; font-size: 40px; font-weight: bold; font-family: 'Impact', sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
+        label { display: block; margin-top: 15px; font-size: 18px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+        .service-box { display: flex; align-items: center; justify-content: space-between; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
+        .service-box.selected { background: red; }
+        .service-box input { margin-left: 10px; }
     </style>
     <script>
-        function sendBooking() {
-            let name = document.getElementById('name').value;
-            let date = document.getElementById('date').value;
-            let time = document.getElementById('time').value;
-            let brand = document.getElementById('brand').value;
-            let type = document.getElementById('type').value;
-            let year = document.getElementById('year').value;
-            let services = Array.from(document.querySelectorAll('.checkbox-container label.active')).map(e => e.textContent).join(', ');
-            let oilType = document.getElementById('oilType').value;
-            let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}%0A Merk Oli: ${oilType}`;
-            let url = `https://wa.me/6287789168900?text=${message}`;
-            window.open(url, '_blank');
-        }
-        function toggleCheckbox(event) {
-            event.currentTarget.classList.toggle('active');
+        function toggleService(box) {
+            box.classList.toggle('selected');
+            let checkbox = box.querySelector("input[type='checkbox']");
+            checkbox.checked = !checkbox.checked;
         }
     </script>
 </head>
 <body>
     <header>PUTRA MOTOR BEKASI</header>
-    <nav>
-        <a href="#services">Layanan</a>
-        <a href="#booking">Booking</a>
-        <a href="#contact">Hubungi Kami</a>
-    </nav>
-    <div class="banner">Bengkel Motor Terbaik di Tambun Selatan - Bekasi</div>
     <div class="container">
         <h2>Booking Service</h2>
-        <div class="booking-form">
-            <label>Nama:</label>
-            <input type="text" id="name">
-            <label>Tanggal:</label>
-            <input type="date" id="date">
-            <label>Jam:</label>
-            <input type="time" id="time">
-            <label>Jenis Motor:</label>
-            <select id="motorType">
-                <option value="Manual">Manual</option>
-                <option value="Matic">Matic</option>
-            </select>
-            <label>Merk Motor:</label>
-            <select id="brand">
-                <option value="Honda">Honda</option>
-                <option value="Yamaha">Yamaha</option>
-                <option value="Suzuki">Suzuki</option>
-                <option value="Kawasaki">Kawasaki</option>
-                <option value="Vespa">Vespa</option>
-                <option value="Lainnya">Lainnya</option>
-            </select>
-            <label>Tipe Motor:</label>
-            <input type="text" id="type">
-            <label>Tahun:</label>
-            <input type="number" id="year" min="2000" max="2025">
-            <label>Jenis Service:</label>
-            <div class="checkbox-container">
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT (untuk matic)</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Tune Up"> Tune Up</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Kampas Rem"> Ganti Kampas Rem</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Aki"> Ganti Aki</label>
-                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Cek Kelistrikan"> Cek Kelistrikan</label>
-            </div>
-            <label>Merk Oli:</label>
-            <input type="text" id="oilType">
-            <button onclick="sendBooking()">Booking Sekarang</button>
+        <label>Nama:</label>
+        <input type="text" id="name">
+        <label>Jenis Motor:</label>
+        <select id="bikeType">
+            <option value="Manual">Manual</option>
+            <option value="Matic">Matic</option>
+        </select>
+        <label>Merk Motor:</label>
+        <select id="bikeBrand">
+            <option value="Honda">Honda</option>
+            <option value="Yamaha">Yamaha</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Kawasaki">Kawasaki</option>
+            <option value="Vespa">Vespa</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+        <label>Type Motor:</label>
+        <input type="text" id="bikeModel">
+        <label>Tahun:</label>
+        <input type="number" id="year" min="2000" max="2025">
+        <label>Jenis Service:</label>
+        <div class="service-box" onclick="toggleService(this)">
+            Service Ringan <input type="checkbox">
         </div>
+        <div class="service-box" onclick="toggleService(this)">
+            Service Injeksi <input type="checkbox">
+        </div>
+        <div class="service-box" onclick="toggleService(this)">
+            Service CVT <input type="checkbox">
+        </div>
+        <div class="service-box" onclick="toggleService(this)">
+            Service Besar <input type="checkbox">
+        </div>
+        <div class="service-box" onclick="toggleService(this)">
+            Ganti Oli <input type="checkbox">
+        </div>
+        <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
     </div>
 </body>
 </html>
