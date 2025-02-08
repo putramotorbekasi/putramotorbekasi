@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bengkel Durjana Motor</title>
+    <title>Bengkel Putra Motor Bekasi/title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; }
         header { background: #d32f2f; color: white; text-align: center; padding: 20px; font-size: 24px; }
