@@ -17,20 +17,7 @@
             letter-spacing: 3px;
         }
         
-    <div class="about-section">
-        <h2>PUTRA MOTOR BEKASI - Motorbike Repair Shop</h2>
-        <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005 silam.</p>
-        <p>Pesatnya perkembangan otomotif khususnya sepeda motor, Putra Motor Bekasi menyediakan jasa:</p>
-        <ul>
-            <p>SPARE PART</p>
-            <p>GANTI OLI</p>
-            <p>SERVICE</p>
-            <p>INJECTION</p>
-        </ul>
-        <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
-    </div>
-</body>
-</html>
+    
 .container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
         label { display: block; margin-top: 15px; font-size: 18px; text-align: left; }
         input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
@@ -91,9 +78,9 @@
     </div>
 <div class="contact-section">
         <h2>Contact Information</h2>
-        <p><img src="phone-icon.png" alt="Phone"> Phone: 0877-8916-8900</p>
-        <p><img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp: 0857-8143-4887</p>
-        <p><img src="instagram-icon.png" alt="Instagram"> Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
+        <p>"phone-icon.png" alt="Phone"> Phone: 0877-8916-8900</p>
+        <p>"whatsapp-icon.png" alt="WhatsApp"> WhatsApp: 0857-8143-4887</p>
+        <p>"instagram-icon.png" alt="Instagram"> Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
         <p><img src="location-icon.png" alt="Location"> Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
     </div>
 </body>
