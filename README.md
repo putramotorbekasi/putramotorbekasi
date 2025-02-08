@@ -10,12 +10,15 @@
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background: url('https://source.unsplash.com/1600x900/?garage,workshop') no-repeat center center/cover; 
+            background: black; 
             color: white; 
         }
         header { 
-            background: #d32f2f; 
-            color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #d32f2f 33%, white 33%, white 66%, #ff9800 66%);
+            color: black; 
             text-align: center; 
             padding: 20px; 
             font-size: 28px; 
@@ -82,11 +85,11 @@
             <input type="number" id="year" min="2000" max="2025">
             <label>Jenis Service:</label>
             <div class="checkbox-container">
-                <label>Service Ringan <input type="checkbox" name="serviceType" value="Service Ringan"></label>
-                <label>Service Injeksi <input type="checkbox" name="serviceType" value="Service Injeksi"></label>
-                <label>Service CVT <input type="checkbox" name="serviceType" value="Service CVT"></label>
-                <label>Service Besar / Turun Mesin <input type="checkbox" name="serviceType" value="Service Besar"></label>
-                <label>Ganti Oli <input type="checkbox" name="serviceType" value="Ganti Oli"></label>
+                <label><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
+                <label><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
+                <label><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT</label>
+                <label><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
+                <label><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
             </div>
             <label>Merk Oli (Jika ganti oli):</label>
             <input type="text" id="oilType">
