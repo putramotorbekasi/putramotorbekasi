@@ -25,6 +25,27 @@
         .gallery { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
         .gallery img { width: 200px; height: 150px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     </style>
+    <script>
+        function sendBooking() {
+            let name = document.getElementById('name').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let bikeType = document.getElementById('bikeType').value;
+            let bikeModel = document.getElementById('bikeModel').value;
+            let year = document.getElementById('year').value;
+            let serviceType = document.getElementById('serviceType').value;
+            let oilType = document.getElementById('oilType').value;
+            let message = `Booking Service:%0AName: ${name}%0A
+                          Tanggal: ${date}%0A
+                          Jam: ${time}%0A
+                          Jenis Motor: ${bikeType}%0A
+                          Nama Motor: ${bikeModel} (${year})%0A
+                          Layanan: ${serviceType}%0A
+                          Oli: ${oilType}`;
+            let url = `https://wa.me/6287789168900?text=${message}`;
+            window.open(url, '_blank');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -37,22 +58,34 @@
     </nav>
     <div class="banner">Bengkel Motor Terbaik di Tambun Selatan - Bekasi</div>
     <div class="container">
-        <h2>Tentang Kami</h2>
-        <p>Putra Motor Bekasi adalah bengkel motor yang telah beroperasi sejak 2005 di Tambun Selatan. Kami menyediakan berbagai layanan perawatan dan perbaikan motor dengan tenaga ahli berpengalaman.</p>
-        
-        <h2 id="services">Layanan Kami</h2>
-        <div class="services">
-            <div class="service-box">Spare Part</div>
-            <div class="service-box">Ganti Oli</div>
-            <div class="service-box">Service Motor</div>
-            <div class="service-box">Service Injeksi</div>
-        </div>
-        
-        <h2 id="gallery">Galeri Bengkel</h2>
-        <div class="gallery">
-            <img src="https://source.unsplash.com/200x150/?motorcycle,repair" alt="Motor Repair">
-            <img src="https://source.unsplash.com/200x150/?workshop,mechanic" alt="Bengkel Mechanic">
-            <img src="https://source.unsplash.com/200x150/?motorbike,service" alt="Service Motor">
+        <h2>Booking Service</h2>
+        <div class="booking-form">
+            <label>Nama:</label>
+            <input type="text" id="name">
+            <label>Tanggal:</label>
+            <input type="date" id="date">
+            <label>Jam:</label>
+            <input type="time" id="time">
+            <label>Jenis Motor:</label>
+            <select id="bikeType">
+                <option value="Manual">Manual</option>
+                <option value="Matic">Matic</option>
+            </select>
+            <label>Nama Motor:</label>
+            <input type="text" id="bikeModel">
+            <label>Tahun:</label>
+            <input type="number" id="year" min="2000" max="2025">
+            <label>Jenis Service:</label>
+            <select id="serviceType">
+                <option value="Service Ringan">Service Ringan</option>
+                <option value="Service Injeksi">Service Injeksi</option>
+                <option value="Service CVT">Service CVT (untuk matic)</option>
+                <option value="Service Besar">Service Besar / Turun Mesin</option>
+                <option value="Ganti Oli">Ganti Oli</option>
+            </select>
+            <label>Merk Oli (Jika ganti oli):</label>
+            <input type="text" id="oilType">
+            <button onclick="sendBooking()">Booking Sekarang</button>
         </div>
     </div>
     <div class="contact">
