@@ -11,22 +11,55 @@
             color: black;
             text-align: center;
             padding: 30px;
-            font-size: 40px;
+            font-size: 50px;
             font-weight: bold;
             font-family: 'Arial Black', sans-serif;
             letter-spacing: 3px;
         }
-        
-    
-.container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
         label { display: block; margin-top: 15px; font-size: 18px; text-align: left; }
         input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-        .service-box { display: flex; align-items: center; justify-content: center; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
+        .service-container { text-align: left; }
+        .service-box { display: flex; align-items: center; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; width: 100%; }
         .service-box.selected { background: red; }
+        .about-section, .contact-section { max-width: 600px; margin: 40px auto; padding: 20px; background: #444; border-radius: 10px; text-align: left; }
+        .contact-section img { width: 30px; vertical-align: middle; margin-right: 10px; }
+        .contact-section a { color: white; text-decoration: none; }
+        .booking-btn { margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer; width: 100%; border-radius: 5px; }
     </style>
     <script>
         function toggleService(box) {
             box.classList.toggle('selected');
+        }
+
+        function bookService() {
+            const name = document.getElementById('name').value;
+            const bikeType = document.getElementById('bikeType').value;
+            const bikeBrand = document.getElementById('bikeBrand').value;
+            const bikeModel = document.getElementById('bikeModel').value;
+            const year = document.getElementById('year').value;
+            const oilBrand = document.getElementById('oilBrand').value;
+            
+            let selectedServices = [];
+            document.querySelectorAll('.service-box.selected').forEach(service => {
+                selectedServices.push(service.textContent);
+            });
+
+            if (!name || !bikeModel || selectedServices.length === 0) {
+                alert('Harap isi semua data dengan benar!');
+                return;
+            }
+            
+            let message = `Halo, saya ingin booking service dengan data berikut:%0A` +
+                `Nama: ${name}%0A` +
+                `Jenis Motor: ${bikeType}%0A` +
+                `Merk Motor: ${bikeBrand}%0A` +
+                `Type Motor: ${bikeModel}%0A` +
+                `Tahun: ${year}%0A` +
+                `Jenis Service: ${selectedServices.join(', ')}%0A` +
+                `Merk Oli: ${oilBrand}`;
+            
+            window.open(`https://wa.me/6285781434887?text=${message}`, '_blank');
         }
     </script>
 </head>
@@ -55,14 +88,16 @@
         <label>Tahun:</label>
         <input type="number" id="year" min="2000" max="2025">
         <label>Jenis Service:</label>
-       <div class="service-box" onclick="toggleService(this)">Service Ringan</div>
+        <div class="service-container">
+            <div class="service-box" onclick="toggleService(this)">Service Ringan</div>
             <div class="service-box" onclick="toggleService(this)">Service Injeksi</div>
             <div class="service-box" onclick="toggleService(this)">Service CVT</div>
             <div class="service-box" onclick="toggleService(this)">Service Besar</div>
             <div class="service-box" onclick="toggleService(this)">Ganti Oli</div>
+        </div>
         <label>Merk Oli:</label>
-       <input type="text" id="oilBrand">
-        <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
+        <input type="text" id="oilBrand">
+        <button class="booking-btn" onclick="bookService()">Booking Sekarang</button>
     </div>
     <div class="about-section">
         <h2>PUTRA MOTOR BEKASI - Motorbike Repair Shop</h2>
@@ -85,3 +120,5 @@
     </div>
 </body>
 </html>
+
+   
