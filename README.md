@@ -77,8 +77,6 @@
        <input type="text" id="oilBrand">
         <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
     </div>
-<button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
-    </div>
     <div class="about-section">
         <h2>PUTRA MOTOR BEKASI - Motorbike Repair Shop</h2>
         <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005 silam.</p>
