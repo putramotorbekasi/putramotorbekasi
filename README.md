@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Putra Motor Bekasi</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background: url('https://source.unsplash.com/1600x900/?garage,workshop') no-repeat center center/cover; 
+            background: rgba(0, 0, 0, 0.9); 
             color: white; 
         }
         header { 
@@ -20,7 +20,7 @@
             padding: 20px; 
             font-size: 28px; 
             font-weight: bold; 
-            font-family: 'Russo One', sans-serif;
+            font-family: 'Racing Sans One', sans-serif;
         }
         nav { display: flex; justify-content: center; background: #ff9800; padding: 15px; }
         nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px; }
@@ -30,10 +30,16 @@
         .booking-form label { font-weight: bold; display: block; margin-top: 12px; font-size: 18px; }
         .booking-form input, .booking-form select { width: 100%; padding: 10px; margin-top: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
         .checkbox-container {
-            display: grid;
-            grid-template-columns: auto auto;
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
+        }
+        .checkbox-container label {
+            display: flex;
             align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            width: 50%;
         }
         button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; margin-top: 20px; }
         button:hover { background: #e65100; }
@@ -71,6 +77,11 @@
             <input type="date" id="date">
             <label>Jam:</label>
             <input type="time" id="time">
+            <label>Jenis Motor:</label>
+            <select id="motorType">
+                <option value="Manual">Manual</option>
+                <option value="Matic">Matic</option>
+            </select>
             <label>Merk Motor:</label>
             <select id="brand">
                 <option value="Honda">Honda</option>
@@ -86,10 +97,15 @@
             <input type="number" id="year" min="2000" max="2025">
             <label>Jenis Service:</label>
             <div class="checkbox-container">
-                <label>Service Ringan <input type="checkbox" name="serviceType" value="Service Ringan"></label>
-                <label>Service Injeksi <input type="checkbox" name="serviceType" value="Service Injeksi"></label>
-                <label>Service CVT (untuk matic) <input type="checkbox" name="serviceType" value="Service CVT"></label>
-                <label>Service Besar / Turun Mesin <input type="checkbox" name="serviceType" value="Service Besar"></label>
+                <label><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
+                <label><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
+                <label><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT (untuk matic)</label>
+                <label><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
+                <label><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
+                <label><input type="checkbox" name="serviceType" value="Tune Up"> Tune Up</label>
+                <label><input type="checkbox" name="serviceType" value="Ganti Kampas Rem"> Ganti Kampas Rem</label>
+                <label><input type="checkbox" name="serviceType" value="Ganti Aki"> Ganti Aki</label>
+                <label><input type="checkbox" name="serviceType" value="Cek Kelistrikan"> Cek Kelistrikan</label>
             </div>
             <label>Merk Oli:</label>
             <input type="text" id="oilType">
