@@ -67,10 +67,10 @@
         <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005 silam.</p>
         <p>Pesatnya perkembangan otomotif khususnya sepeda motor, Putra Motor Bekasi menyediakan jasa:</p>
         <ul>
-            <li>SPARE PART</li>
-            <li>GANTI OLI</li>
-            <li>SERVICE</li>
-            <li>INJECTION</li>
+            <p>SPARE PART</li>
+            <p>GANTI OLI</li>
+            <p>SERVICE</li>
+            <p>INJECTION</li>
         </ul>
         <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
     </div>
