@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bengkel Putra Motor Bekasi/title>
+    <title>Putra Motor Bekasi</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; }
         header { background: #d32f2f; color: white; text-align: center; padding: 20px; font-size: 24px; }
@@ -19,19 +19,21 @@
 </head>
 <body>
     <header>
-        <h1>Selamat Datang di <span class="highlight">Bengkel Durjana Motor</span></h1>
+        <h1>Selamat Datang di <span class="highlight">Putra Motor Bekasi</span></h1>
     </header>
     <div class="container">
-        <h2>Solusi Terbaik untuk Kendaraan Anda!</h2>
-        <p>Kami menyediakan layanan perawatan dan perbaikan kendaraan dengan kualitas terbaik.</p>
+        <h2>Bengkel Sepeda Motor Terpercaya di Tambun Selatan - Bekasi</h2>
+        <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005.</p>
         
         <h3>Layanan Kami</h3>
         <div class="services">
-            <div class="service-box">🔧 Servis Ringan</div>
-            <div class="service-box">🛠️ Servis Besar</div>
-            <div class="service-box">🛢️ Ganti Oli</div>
-            <div class="service-box">⚙️ Tune Up</div>
+            <div class="service-box">🔩 SPARE PART</div>
+            <div class="service-box">🛢️ GANTI OLI</div>
+            <div class="service-box">🛠️ SERVICE</div>
+            <div class="service-box">⚙️ INJECTION</div>
         </div>
+        
+        <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
         
         <div class="contact">
             <h3>Hubungi Kami</h3>
