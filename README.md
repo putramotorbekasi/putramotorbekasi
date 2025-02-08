@@ -10,15 +10,12 @@
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background: black; 
+            background: url('https://source.unsplash.com/1600x900/?garage,workshop') no-repeat center center/cover; 
             color: white; 
         }
         header { 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to right, #d32f2f 33%, white 33%, white 66%, #ff9800 66%);
-            color: black; 
+            background: #d32f2f; 
+            color: white; 
             text-align: center; 
             padding: 20px; 
             font-size: 28px; 
@@ -32,8 +29,12 @@
         .booking-form { margin-top: 30px; }
         .booking-form label { font-weight: bold; display: block; margin-top: 12px; font-size: 18px; }
         .booking-form input, .booking-form select { width: 100%; padding: 10px; margin-top: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-        .checkbox-container { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; align-items: center; }
-        .checkbox-container label { display: flex; align-items: center; gap: 10px; }
+        .checkbox-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            align-items: center;
+        }
         button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; margin-top: 20px; }
         button:hover { background: #e65100; }
     </style>
@@ -46,8 +47,8 @@
             let type = document.getElementById('type').value;
             let year = document.getElementById('year').value;
             let services = Array.from(document.querySelectorAll('input[name="serviceType"]:checked')).map(e => e.value).join(', ');
-            let oil = document.getElementById('oilType').value;
-            let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}%0A Oli: ${oil}`;
+            let oilType = document.getElementById('oilType').value;
+            let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}%0A Merk Oli: ${oilType}`;
             let url = `https://wa.me/6287789168900?text=${message}`;
             window.open(url, '_blank');
         }
@@ -85,13 +86,12 @@
             <input type="number" id="year" min="2000" max="2025">
             <label>Jenis Service:</label>
             <div class="checkbox-container">
-                <label><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
-                <label><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
-                <label><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT</label>
-                <label><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
-                <label><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
+                <label>Service Ringan <input type="checkbox" name="serviceType" value="Service Ringan"></label>
+                <label>Service Injeksi <input type="checkbox" name="serviceType" value="Service Injeksi"></label>
+                <label>Service CVT (untuk matic) <input type="checkbox" name="serviceType" value="Service CVT"></label>
+                <label>Service Besar / Turun Mesin <input type="checkbox" name="serviceType" value="Service Besar"></label>
             </div>
-            <label>Merk Oli (Jika ganti oli):</label>
+            <label>Merk Oli:</label>
             <input type="text" id="oilType">
             <button onclick="sendBooking()">Booking Sekarang</button>
         </div>
