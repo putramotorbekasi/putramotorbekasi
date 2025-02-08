@@ -37,8 +37,12 @@
         
         <div class="contact">
             <h3>Hubungi Kami</h3>
+            <p>📍 Alamat: Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
+            <p>📞 Telepon: <a href="tel:087789168900">0877-8916-8900</a> / <a href="tel:085781434887">0857-8143-4887</a></p>
+            <p>🌍 Website: <a href="http://g.page/putramotorbekasi" target="_blank">Google Maps</a></p>
+            <p>📷 Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
             <p>Punya pertanyaan? Klik tombol di bawah untuk langsung WhatsApp kami!</p>
-            <a href="https://wa.me/6281234567890" target="_blank"><button>Chat via WhatsApp</button></a>
+            <a href="https://wa.me/6287789168900" target="_blank"><button>Chat via WhatsApp</button></a>
         </div>
     </div>
 </body>
