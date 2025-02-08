@@ -10,15 +10,12 @@
         .container { max-width: 600px; margin: auto; padding: 20px; background: #333; border-radius: 10px; }
         label { display: block; margin-top: 15px; font-size: 18px; }
         input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-        .service-box { display: flex; align-items: center; justify-content: space-between; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
+        .service-box { display: flex; align-items: center; justify-content: center; background: #444; padding: 10px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
         .service-box.selected { background: red; }
-        .service-box input { margin-left: 10px; }
     </style>
     <script>
         function toggleService(box) {
             box.classList.toggle('selected');
-            let checkbox = box.querySelector("input[type='checkbox']");
-            checkbox.checked = !checkbox.checked;
         }
     </script>
 </head>
@@ -47,21 +44,13 @@
         <label>Tahun:</label>
         <input type="number" id="year" min="2000" max="2025">
         <label>Jenis Service:</label>
-        <div class="service-box" onclick="toggleService(this)">
-            Service Ringan <input type="checkbox">
-        </div>
-        <div class="service-box" onclick="toggleService(this)">
-            Service Injeksi <input type="checkbox">
-        </div>
-        <div class="service-box" onclick="toggleService(this)">
-            Service CVT <input type="checkbox">
-        </div>
-        <div class="service-box" onclick="toggleService(this)">
-            Service Besar <input type="checkbox">
-        </div>
-        <div class="service-box" onclick="toggleService(this)">
-            Ganti Oli <input type="checkbox">
-        </div>
+        <div class="service-box" onclick="toggleService(this)">Service Ringan</div>
+        <div class="service-box" onclick="toggleService(this)">Service Injeksi</div>
+        <div class="service-box" onclick="toggleService(this)">Service CVT</div>
+        <div class="service-box" onclick="toggleService(this)">Service Besar</div>
+        <div class="service-box" onclick="toggleService(this)">Ganti Oli</div>
+        <label>Merk Oli:</label>
+        <input type="text" id="oilBrand">
         <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
     </div>
 </body>
