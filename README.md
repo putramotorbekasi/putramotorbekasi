@@ -25,17 +25,14 @@
         nav { display: flex; justify-content: center; background: #ff9800; padding: 15px; }
         nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px; }
         .banner { text-align: center; padding: 60px 20px; font-size: 30px; font-weight: bold; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; text-align: center; background: rgba(0, 0, 0, 0.7); border-radius: 10px; }
-        .booking-form { margin-top: 30px; text-align: left; }
+        .container { max-width: 600px; margin: auto; padding: 20px; text-align: left; background: rgba(0, 0, 0, 0.7); border-radius: 10px; }
+        .booking-form { margin-top: 30px; }
         .booking-form label { font-weight: bold; display: block; margin-top: 12px; font-size: 18px; }
         .booking-form input, .booking-form select { width: 100%; padding: 10px; margin-top: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-        .checkbox-container { display: flex; flex-direction: column; }
-        .checkbox-container label { display: flex; align-items: center; margin-top: 5px; }
-        .checkbox-container input { margin-right: 10px; }
-        button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; }
+        .checkbox-container { display: flex; flex-direction: column; gap: 5px; }
+        .checkbox-container label { display: flex; align-items: center; gap: 10px; }
+        button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; margin-top: 20px; }
         button:hover { background: #e65100; }
-        .logo-container { display: flex; justify-content: center; margin-top: 30px; }
-        .logo-container img { width: 80px; margin: 10px; }
     </style>
     <script>
         function sendBooking() {
@@ -46,8 +43,7 @@
             let type = document.getElementById('type').value;
             let year = document.getElementById('year').value;
             let services = Array.from(document.querySelectorAll('input[name="serviceType"]:checked')).map(e => e.value).join(', ');
-            let oilType = document.getElementById('oilType').value;
-            let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}%0A Oli: ${oilType}`;
+            let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}`;
             let url = `https://wa.me/6287789168900?text=${message}`;
             window.open(url, '_blank');
         }
@@ -89,10 +85,7 @@
                 <label><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
                 <label><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT (untuk matic)</label>
                 <label><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
-                <label><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
             </div>
-            <label>Merk Oli (Jika ganti oli):</label>
-            <input type="text" id="oilType">
             <button onclick="sendBooking()">Booking Sekarang</button>
         </div>
     </div>
