@@ -30,7 +30,24 @@
 </head>
 <body>
     <header>PUTRA MOTOR BEKASI</header>
-    <div class="container">
+   
+        <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
+    </div>
+    <div class="about-section">
+        <h2>PUTRA MOTOR BEKASI - Motorbike Repair Shop</h2>
+        <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005 silam.</p>
+        <p>Pesatnya perkembangan otomotif khususnya sepeda motor, Putra Motor Bekasi menyediakan jasa:</p>
+        <ul>
+            <p>SPARE PART</p>
+            <p>GANTI OLI</p>
+            <p>SERVICE</p>
+            <p>INJECTION</p>
+        </ul>
+        <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
+    </div>
+</body>
+</html>
+ <div class="container">
         <h2>Booking Service</h2>
         <label>Nama:</label>
         <input type="text" id="name">
@@ -60,19 +77,3 @@
         <div class="service-box" onclick="toggleService(this)">Ganti Oli</div>
         <label>Merk Oli:</label>
        <input type="text" id="oilBrand">
-        <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
-    </div>
-    <div class="about-section">
-        <h2>PUTRA MOTOR BEKASI - Motorbike Repair Shop</h2>
-        <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005 silam.</p>
-        <p>Pesatnya perkembangan otomotif khususnya sepeda motor, Putra Motor Bekasi menyediakan jasa:</p>
-        <ul>
-            <p>SPARE PART</p>
-            <p>GANTI OLI</p>
-            <p>SERVICE</p>
-            <p>INJECTION</p>
-        </ul>
-        <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
-    </div>
-</body>
-</html>
