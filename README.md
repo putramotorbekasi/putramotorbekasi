@@ -33,7 +33,7 @@
         }
 
         function bookService() {
-           const name = document.getElementById('name').value;
+            const name = document.getElementById('name').value;
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
             const bikeType = document.getElementById('bikeType').value;
@@ -47,13 +47,15 @@
                 selectedServices.push(service.textContent);
             });
 
-            if (!name || !bikeModel || selectedServices.length === 0) {
+            if (!name || !date || !time || !bikeModel || selectedServices.length === 0) {
                 alert('Harap isi semua data dengan benar!');
                 return;
             }
             
             let message = `Halo, saya ingin booking service dengan data berikut:%0A` +
                 `Nama: ${name}%0A` +
+                `Tanggal: ${date}%0A` +
+                `Jam: ${time}%0A` +
                 `Jenis Motor: ${bikeType}%0A` +
                 `Merk Motor: ${bikeBrand}%0A` +
                 `Type Motor: ${bikeModel}%0A` +
@@ -71,6 +73,10 @@
         <h2>Booking Service</h2>
         <label>Nama:</label>
         <input type="text" id="name">
+        <label>Tanggal:</label>
+        <input type="date" id="date">
+        <label>Jam:</label>
+        <input type="time" id="time">
         <label>Jenis Motor:</label>
         <select id="bikeType">
             <option value="Manual">Manual</option>
