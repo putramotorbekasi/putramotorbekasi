@@ -7,43 +7,98 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; }
         header { background: #d32f2f; color: white; text-align: center; padding: 20px; font-size: 24px; }
+        nav { display: flex; justify-content: center; background: #ff9800; padding: 10px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .banner { text-align: center; padding: 50px 20px; background: url('https://source.unsplash.com/1200x400/?motorcycle,workshop') no-repeat center center/cover; color: white; font-size: 28px; font-weight: bold; }
         .container { max-width: 800px; margin: auto; padding: 20px; text-align: center; }
         .highlight { color: #ff9800; font-weight: bold; }
         .services { display: flex; flex-wrap: wrap; justify-content: center; }
-        .service-box { background: #fff3e0; padding: 15px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 45%; color: #d32f2f; font-weight: bold; }
+        .service-box { background: #fff3e0; padding: 15px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 45%; color: #d32f2f; font-weight: bold; transition: transform 0.3s; }
+        .service-box:hover { transform: scale(1.05); }
         .contact { margin-top: 20px; padding: 20px; background: #d32f2f; color: white; border-radius: 10px; }
         .contact a { color: #ffcc80; text-decoration: none; font-weight: bold; }
-        button { background: #ff9800; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 18px; border-radius: 5px; }
+        button { background: #ff9800; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 18px; border-radius: 5px; transition: background 0.3s; }
         button:hover { background: #e65100; }
+        .booking-form { margin-top: 20px; text-align: left; }
+        .booking-form label { font-weight: bold; display: block; margin-top: 10px; }
+        .booking-form input, .booking-form select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
     </style>
+    <script>
+        function generateWhatsAppLink() {
+            const phone = "6287789168900";
+            const hari = document.getElementById("hari").value;
+            const jam = document.getElementById("jam").value;
+            const jenisMotor = document.getElementById("jenisMotor").value;
+            const namaMotor = document.getElementById("namaMotor").value;
+            const tahunMotor = document.getElementById("tahunMotor").value;
+            const service = document.getElementById("service").value;
+            const oliMesin = document.getElementById("oliMesin").value;
+            const oliGear = document.getElementById("oliGear").value;
+            
+            let message = `Halo Putra Motor Bekasi, saya ingin booking service:\n- Hari: ${hari}\n- Jam: ${jam}\n- Jenis Motor: ${jenisMotor}\n- Nama Motor: ${namaMotor}\n- Tahun: ${tahunMotor}\n- Service: ${service}`;
+            if (service.includes("Ganti Oli")) {
+                message += `\n- Oli Mesin: ${oliMesin}`;
+            }
+            if (jenisMotor === "Matic" && service.includes("Ganti Oli Gear")) {
+                message += `\n- Oli Gear: ${oliGear}`;
+            }
+            
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Selamat Datang di <span class="highlight">Putra Motor Bekasi</span></h1>
     </header>
+    <nav>
+        <a href="#services">Layanan</a>
+        <a href="#contact">Hubungi Kami</a>
+    </nav>
+    <div class="banner">Bengkel Motor Terbaik di Tambun Selatan - Bekasi</div>
     <div class="container">
-        <h2>Bengkel Sepeda Motor Terpercaya di Tambun Selatan - Bekasi</h2>
-        <p>Putra Motor Bekasi adalah sebuah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005.</p>
-        
-        <h3>Layanan Kami</h3>
-        <div class="services">
-            <div class="service-box">🔩 SPARE PART</div>
-            <div class="service-box">🛢️ GANTI OLI</div>
-            <div class="service-box">🛠️ SERVICE</div>
-            <div class="service-box">⚙️ INJECTION</div>
-        </div>
-        
-        <p>Dengan tenaga ahli yang sudah berpengalaman di bidangnya, kami hadir untuk Anda yang selalu mengutamakan kenyamanan dan keselamatan dalam berkendara.</p>
-        
-        <div class="contact">
-            <h3>Hubungi Kami</h3>
-            <p>📍 Alamat: Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
-            <p>📞 Telepon: <a href="tel:087789168900">0877-8916-8900</a> / <a href="tel:085781434887">0857-8143-4887</a></p>
-            <p>🌍 Website: <a href="http://g.page/putramotorbekasi" target="_blank">Google Maps</a></p>
-            <p>📷 Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
-            <p>Punya pertanyaan? Klik tombol di bawah untuk langsung WhatsApp kami!</p>
-            <a href="https://wa.me/6287789168900" target="_blank"><button>Chat via WhatsApp</button></a>
+        <h2>Booking Service</h2>
+        <div class="booking-form">
+            <label for="hari">Pilih Hari:</label>
+            <input type="date" id="hari" required>
+            
+            <label for="jam">Pilih Jam:</label>
+            <input type="time" id="jam" required>
+            
+            <label for="jenisMotor">Jenis Motor:</label>
+            <select id="jenisMotor">
+                <option value="Manual">Manual</option>
+                <option value="Matic">Matic</option>
+            </select>
+            
+            <label for="namaMotor">Nama Motor:</label>
+            <input type="text" id="namaMotor" placeholder="Misal: Honda Beat">
+            
+            <label for="tahunMotor">Tahun Motor:</label>
+            <input type="number" id="tahunMotor" placeholder="Misal: 2020">
+            
+            <label for="service">Pilih Service:</label>
+            <select id="service">
+                <option value="Service Ringan">Service Ringan</option>
+                <option value="Service Injeksi">Service Injeksi</option>
+                <option value="Service CVT">Service CVT (khusus Matic)</option>
+                <option value="Service Besar">Service Besar / Turun Mesin</option>
+                <option value="Ganti Oli Mesin">Ganti Oli Mesin</option>
+                <option value="Ganti Oli Gear">Ganti Oli Gear (khusus Matic)</option>
+            </select>
+            
+            <label for="oliMesin">Merk Oli Mesin:</label>
+            <input type="text" id="oliMesin" placeholder="Misal: Shell Helix">
+            
+            <label for="oliGear">Merk Oli Gear (khusus Matic):</label>
+            <input type="text" id="oliGear" placeholder="Misal: Yamalube">
+            
+            <button onclick="generateWhatsAppLink()">Booking Sekarang</button>
         </div>
     </div>
+    <footer>
+        &copy; 2025 Putra Motor Bekasi | Semua Hak Dilindungi
+    </footer>
 </body>
 </html>
