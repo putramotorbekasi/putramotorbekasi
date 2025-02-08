@@ -33,7 +33,9 @@
         }
 
         function bookService() {
-            const name = document.getElementById('name').value;
+           const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
             const bikeType = document.getElementById('bikeType').value;
             const bikeBrand = document.getElementById('bikeBrand').value;
             const bikeModel = document.getElementById('bikeModel').value;
