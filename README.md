@@ -3,97 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Putra Motor Bekasi</title>
+    <title>PUTRA MOTOR Bekasi - Bengkel Motor Profesional</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; }
-        header { background: #d32f2f; color: white; text-align: center; padding: 20px; font-size: 28px; font-weight: bold; }
-        nav { display: flex; justify-content: center; background: #ff9800; padding: 15px; }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 18px; }
-        .banner { text-align: center; padding: 60px 20px; background: url('https://source.unsplash.com/1200x400/?motorcycle,workshop') no-repeat center center/cover; color: white; font-size: 30px; font-weight: bold; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; text-align: center; }
-        .highlight { color: #ff9800; font-weight: bold; }
-        .services, .contact-info { display: flex; flex-wrap: wrap; justify-content: center; }
-        .service-box, .contact-box { background: #fff3e0; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 45%; color: #d32f2f; font-weight: bold; transition: transform 0.3s; font-size: 18px; }
-        .service-box:hover, .contact-box:hover { transform: scale(1.05); }
-        .contact { margin-top: 30px; padding: 25px; background: #d32f2f; color: white; border-radius: 10px; }
-        .contact a { color: #ffcc80; text-decoration: none; font-weight: bold; }
-        button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; }
-        button:hover { background: #e65100; }
-        .booking-form { margin-top: 30px; text-align: left; }
-        .booking-form label { font-weight: bold; display: block; margin-top: 12px; font-size: 18px; }
-        .booking-form input, .booking-form select { width: 100%; padding: 10px; margin-top: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
-    </style>
-    <script>
-        function sendBooking() {
-            let name = document.getElementById('name').value;
-            let date = document.getElementById('date').value;
-            let time = document.getElementById('time').value;
-            let bikeType = document.getElementById('bikeType').value;
-            let bikeModel = document.getElementById('bikeModel').value;
-            let year = document.getElementById('year').value;
-            let serviceType = document.getElementById('serviceType').value;
-            let oilType = document.getElementById('oilType').value;
-            let message = `Booking Service:%0AName: ${name}%0A
-                          Tanggal: ${date}%0A
-                          Jam: ${time}%0A
-                          Jenis Motor: ${bikeType}%0A
-                          Nama Motor: ${bikeModel} (${year})%0A
-                          Layanan: ${serviceType}%0A
-                          Oli: ${oilType}`;
-            let url = `https://wa.me/6287789168900?text=${message}`;
-            window.open(url, '_blank');
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6600; /* Orange */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .about h2 {
+            color: #ff6600; /* Orange */
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+        }
+
+        .about ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .about ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .about ul li::before {
+            content: "✓";
+            color: #ff6600; /* Orange */
+            margin-right: 0.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #ff0000; /* Red */
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+        }
+
+        /* Booking Section */
+        .booking {
+            background-color: #ff6600; /* Orange */
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .booking h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .booking button {
+            background-color: #ff0000; /* Red */
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .booking button:hover {
+            background-color: #cc0000; /* Darker Red */
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .contact h2 {
+            color: #ff6600; /* Orange */
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact a {
+            color: #ff0000; /* Red */
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>PUTRA MOTOR BEKASI</header>
-    <nav>
-        <a href="#services">Layanan</a>
-        <a href="#booking">Booking</a>
-        <a href="#contact">Hubungi Kami</a>
-    </nav>
-    <div class="banner">Bengkel Motor Terbaik di Tambun Selatan - Bekasi</div>
+    <!-- Header -->
+    <header>
+        <h1>PUTRA MOTOR BEKASI</h1>
+        <p>Bengkel Motor Profesional Sejak 2005</p>
+    </header>
+
+    <!-- Container -->
     <div class="container">
-        <h2>Booking Service</h2>
-        <div class="booking-form">
-            <label>Nama:</label>
-            <input type="text" id="name">
-            <label>Tanggal:</label>
-            <input type="date" id="date">
-            <label>Jam:</label>
-            <input type="time" id="time">
-            <label>Jenis Motor:</label>
-            <select id="bikeType">
-                <option value="Manual">Manual</option>
-                <option value="Matic">Matic</option>
-            </select>
-            <label>Nama Motor:</label>
-            <input type="text" id="bikeModel">
-            <label>Tahun:</label>
-            <input type="number" id="year" min="2000" max="2025">
-            <label>Jenis Service:</label>
-            <select id="serviceType">
-                <option value="Service Ringan">Service Ringan</option>
-                <option value="Service Injeksi">Service Injeksi</option>
-                <option value="Service CVT">Service CVT (untuk matic)</option>
-                <option value="Service Besar">Service Besar / Turun Mesin</option>
-                <option value="Ganti Oli">Ganti Oli</option>
-            </select>
-            <label>Merk Oli (Jika ganti oli):</label>
-            <input type="text" id="oilType">
-            <button onclick="sendBooking()">Booking Sekarang</button>
-        </div>
+        <!-- About Section -->
+        <section class="about">
+            <h2>Tentang Kami</h2>
+            <p>
+                Putra Motor Bekasi adalah bengkel sepeda motor kecil di daerah Tambun Selatan - Bekasi yang berdiri sejak 2005. Dengan perkembangan otomotif yang pesat, kami menyediakan layanan berkualitas untuk kenyamanan dan keselamatan berkendara Anda.
+            </p>
+            <ul>
+                <li>SPARE PART</li>
+                <li>GANTI OLI</li>
+                <li>SERVICE</li>
+                <li>INJECTION</li>
+            </ul>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="service-card">
+                <h3>Service Ringan</h3>
+                <p>Perawatan rutin untuk menjaga performa motor Anda.</p>
+            </div>
+            <div class="service-card">
+                <h3>Service Injeksi</h3>
+                <p>Perbaikan dan perawatan sistem injeksi motor.</p>
+            </div>
+            <div class="service-card">
+                <h3>Service CVT</h3>
+                <p>Khusus untuk motor matic, perawatan sistem CVT.</p>
+            </div>
+            <div class="service-card">
+                <h3>Service Besar/Turun Mesin</h3>
+                <p>Perbaikan komprehensif untuk masalah mesin.</p>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking">
+            <h2>Booking Service Sekarang!</h2>
+            <button onclick="window.location.href='https://wa.me/6285781434887?text=Halo,%20saya%20ingin%20booking%20service%20di%20PUTRA%20MOTOR%20Bekasi.'">
+                Booking via WhatsApp
+            </button>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Hubungi Kami</h2>
+            <p>Telepon: <a href="tel:087789168900">0877-8916-8900</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6285781434887">0857-8143-4887</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
+            <p>Alamat: Jalan Bumi Sani Permai Selatan No.6, RT.02/RW.11, Setiamekar, Kecamatan Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
+            <p>Jam Operasional: Buka 09:00 - 17:00 (Jumat Tutup)</p>
+        </section>
     </div>
-    <div class="contact">
-        <h2 id="contact">Hubungi Kami</h2>
-        <p>📍 Lokasi: Jalan Bumi Sani Permai Selatan No.6, Tambun Selatan, Bekasi</p>
-        <p>📞 Telp: 0877-8916-8900</p>
-        <p>📲 WhatsApp: 0857-8143-4887</p>
-        <p>📷 Instagram: <a href="https://www.instagram.com/putramotorbekasi" target="_blank">@putramotorbekasi</a></p>
-        <p>🕒 Jam Operasional: Senin - Kamis, Sabtu - Minggu (09:00 - 17:00) | Jumat Libur</p>
-    </div>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2025 Putra Motor Bekasi | Semua Hak Dilindungi
+        <p>&copy; 2024 PUTRA MOTOR Bekasi. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
