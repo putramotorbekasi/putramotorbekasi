@@ -40,6 +40,19 @@
             gap: 5px;
             font-size: 16px;
             width: 50%;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            background: white;
+            color: black;
+            transition: background 0.3s, color 0.3s;
+        }
+        .checkbox-container label input {
+            display: none;
+        }
+        .checkbox-container label.active {
+            background: red;
+            color: white;
         }
         button { background: #ff9800; color: white; border: none; padding: 12px 25px; cursor: pointer; font-size: 20px; border-radius: 5px; transition: background 0.3s; margin-top: 20px; }
         button:hover { background: #e65100; }
@@ -52,11 +65,14 @@
             let brand = document.getElementById('brand').value;
             let type = document.getElementById('type').value;
             let year = document.getElementById('year').value;
-            let services = Array.from(document.querySelectorAll('input[name="serviceType"]:checked')).map(e => e.value).join(', ');
+            let services = Array.from(document.querySelectorAll('.checkbox-container label.active')).map(e => e.textContent).join(', ');
             let oilType = document.getElementById('oilType').value;
             let message = `Booking Service:%0AName: ${name}%0A Tanggal: ${date}%0A Jam: ${time}%0A Merk Motor: ${brand}%0A Tipe Motor: ${type} (${year})%0A Layanan: ${services}%0A Merk Oli: ${oilType}`;
             let url = `https://wa.me/6287789168900?text=${message}`;
             window.open(url, '_blank');
+        }
+        function toggleCheckbox(event) {
+            event.currentTarget.classList.toggle('active');
         }
     </script>
 </head>
@@ -97,15 +113,15 @@
             <input type="number" id="year" min="2000" max="2025">
             <label>Jenis Service:</label>
             <div class="checkbox-container">
-                <label><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
-                <label><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
-                <label><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT (untuk matic)</label>
-                <label><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
-                <label><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
-                <label><input type="checkbox" name="serviceType" value="Tune Up"> Tune Up</label>
-                <label><input type="checkbox" name="serviceType" value="Ganti Kampas Rem"> Ganti Kampas Rem</label>
-                <label><input type="checkbox" name="serviceType" value="Ganti Aki"> Ganti Aki</label>
-                <label><input type="checkbox" name="serviceType" value="Cek Kelistrikan"> Cek Kelistrikan</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Ringan"> Service Ringan</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Injeksi"> Service Injeksi</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service CVT"> Service CVT (untuk matic)</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Service Besar"> Service Besar / Turun Mesin</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Oli"> Ganti Oli</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Tune Up"> Tune Up</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Kampas Rem"> Ganti Kampas Rem</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Ganti Aki"> Ganti Aki</label>
+                <label onclick="toggleCheckbox(event)"><input type="checkbox" name="serviceType" value="Cek Kelistrikan"> Cek Kelistrikan</label>
             </div>
             <label>Merk Oli:</label>
             <input type="text" id="oilType">
