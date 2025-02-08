@@ -55,11 +55,11 @@
         <label>Tahun:</label>
         <input type="number" id="year" min="2000" max="2025">
         <label>Jenis Service:</label>
-        <div class="service-box" onclick="toggleService(this)">Service Ringan</div>
-        <div class="service-box" onclick="toggleService(this)">Service Injeksi</div>
-        <div class="service-box" onclick="toggleService(this)">Service CVT</div>
-        <div class="service-box" onclick="toggleService(this)">Service Besar</div>
-        <div class="service-box" onclick="toggleService(this)">Ganti Oli</div>
+       <div class="service-box" onclick="toggleService(this)">Service Ringan</div>
+            <div class="service-box" onclick="toggleService(this)">Service Injeksi</div>
+            <div class="service-box" onclick="toggleService(this)">Service CVT</div>
+            <div class="service-box" onclick="toggleService(this)">Service Besar</div>
+            <div class="service-box" onclick="toggleService(this)">Ganti Oli</div>
         <label>Merk Oli:</label>
        <input type="text" id="oilBrand">
         <button style="margin-top: 20px; padding: 12px 20px; font-size: 18px; background: #ff9800; color: white; border: none; cursor: pointer;">Booking Sekarang</button>
